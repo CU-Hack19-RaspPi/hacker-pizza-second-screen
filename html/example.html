@@ -3,16 +3,112 @@
 
 <head>
 	<script src="../lib/connect-streams.js"></script>
+	<!--link Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Comfortaa|Francois+One" rel="stylesheet">
+	<!--Stylesheet-->
+	<style>
+		h1 {
+			font-family: 'Confortaa', sans-serif;
+		}
+		h2 {
+			font-family: 'Cabin', sans-serif;
+		}
+		p {
+			font-family: 'Francois One', sans-serif;
+		}
 
+		#mainUI {
+			height: 88vh;
+			min-height: 508px;
+			margin: 0;
+			padding: 0;
+			align-items: center;
+			position: relative;
+		}
+		#displayArea {
+			height: inherit;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+		}
+		#textDiv {
+			border-radius:  0 20px 20px 0;
+			background-color: rgba(255, 255, 255, 0.8);
+			width: 500px;
+			height: 465px;
+			margin: 10px;
+			margin-left: 0;
+			padding: 0;
+		}
+		#titleArea {
+			background-color: rgba(255,255,255,0.4);
+			height: 12vh;
+			min-height: 80px;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#nameArea {
+			background-color: #FFF;
+		}
+		#appContainer {
+			padding: 0;
+			border-radius: 20px 0 0 20px;
+			overflow: hidden;
+		}
+		/*Shimmer*/
+		body{
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			min-width: 850px;
+			min-height: 590px;
+			background: linear-gradient(270deg, #fc2a5f, #645ec9);
+			background-size: 400% 400%;
+
+			-webkit-animation: shimmer 10s ease infinite;
+			-moz-animation: shimmer 10s ease infinite;
+			animation: shimmer 10s ease infinite;
+		}
+		@-webkit-keyframes shimmer {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+		@-moz-keyframes shimmer {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+		@keyframes shimmer {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+	</style>
 </head>
 
 <body>
-	<div id="myApp">
-		<h1>Amazon Connect Streams API Samples<h1>
-				<h2>Embedding CCP</h2>
+
+	<div id="mainUI">
+		<div id="displayArea">
+			<div id="appContainer">
+				<div id="containerDiv" style="width: 320px; height: 467px; border: none; margin-left: -2px; margin-top: -2px;">
+					<!--Amazon CCP will go here-->
+				</div>
+			</div>
+			<div id="textDiv"></div>
+		</div>
 	</div>
-	<div id="containerDiv" style="width: 320px; min-width: 200px; height: 465px; min-height: 400px; ">
-		<!--Amazon CCP will go here-->
+	<div id="titleArea">
+		<h2 style="color: white;" >Amazon Connect Streams Phone</h2>
+	</div>
+	<div id="nameArea">
+		<p style="color: black; padding: 0; margin: 0;">Product of cuHack!</p>
 	</div>
 </body>
 
