@@ -14,15 +14,23 @@ const io = require('socket.io')(server);
 
 server.listen(443);
 
+const orderData = {
+  "food": ["Pizza", "Salad", "Starter"],
+  "size": ["Small", "Standard", "Large"]
+}
+
+function attrQuery(attr) {
+  let tempStr = "<h1>"
+  tempStr += orderData.size[attr[1]-1] + ' '
+  tempStr += orderData.food[attr[0]-1]
+  return tempStr + "</h1>"
+}
+
 router.get("/", (req, res) =>
 {
   console.log('req query:', req.query)
   if (req.query.attr) {
-    // console.log(req.query.attr)
-    // TODO: build a json file storing all possible user selection
-    // find the value(description of the order: i.e.spicy pizza) according to req.query.attr
-    // then return the value through the following emit function:
-    io.emit('userAttr', JSON.stringify(req.query.attr))
+    io.emit('userAttr', JSON.stringify({"data": attrQuery(req.query.attr)}))
   }
 	res.sendFile(path.join(__dirname + '/html/example.html'));
 })

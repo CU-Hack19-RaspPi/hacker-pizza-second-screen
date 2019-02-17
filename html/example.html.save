@@ -41,9 +41,6 @@
 			margin: 10px;
 			margin-left: 0;
 			padding: 0;
-      display: flex;
-			justify-content: center;
-			align-items: center;
 		}
 		#titleArea {
 			background-color: rgba(255,255,255,0.4);
@@ -110,10 +107,12 @@
 		</div>
 	</div>
 	<div id="titleArea">
-		<h2 style="color: white;" >Hacker Pizza | Order System</h2>
+		<h2 style="color: white;" >Pizza Hacker | Order System</h2>
 	</div>
 	<div id="nameArea">
 		<h2 style="color: #46117f;">Product of cuHacking 2019!</h2>
+		<p>UI Design: Yixiang Huang</p>
+		<p>Web Architecture: </p>
 	</div>
 </body>
 
