@@ -19,6 +19,9 @@ router.get("/", (req, res) =>
   console.log('req query:', req.query)
   if (req.query.attr) {
     // console.log(req.query.attr)
+    // TODO: build a json file storing all possible user selection
+    // find the value(description of the order: i.e.spicy pizza) according to req.query.attr
+    // then return the value through the following emit function:
     io.emit('userAttr', JSON.stringify(req.query.attr))
   }
 	res.sendFile(path.join(__dirname + '/html/example.html'));
