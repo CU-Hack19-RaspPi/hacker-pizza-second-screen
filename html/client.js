@@ -1,4 +1,4 @@
-let socket = io('https://' + window.document.location.host, {secure: true})
+let socket = io('http://' + window.document.location.host)
 let textArea = document.getElementById("textDiv")
 
 socket.on('userAttr', data => {

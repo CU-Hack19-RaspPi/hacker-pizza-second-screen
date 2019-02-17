@@ -1,18 +1,16 @@
 const express = require('express');
 const app = express();
-const https = require('https');
+const http = require('http');
 const fs = require("fs");
 const path = require('path');
 const router = express.Router();
 
-const server = https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
-}, app).listen(process.env.port || 443);
-
+const ROOT_DIR = 'html'
+// const ecStatic = require('ecstatic')
+const PORT = process.env.PORT || 8080
+const server = http.createServer(app)
 const io = require('socket.io')(server);
-
-server.listen(443);
+server.listen(PORT);
 
 const orderData = {
   "food": ["Pizza", "Salad", "Starter"],
@@ -36,9 +34,8 @@ router.get("/", (req, res) =>
 })
 
 app.use('/', express.static(path.join(__dirname, 'html')))
-app.use("/lib", express.static(__dirname + '/lib'));
 
 app.use('/', router);
 
-console.log("running on Port 443");
-console.log("https://ottawa.recipes");
+console.log("running on Port 8080");
+console.log(`http://localhost:8080/`)

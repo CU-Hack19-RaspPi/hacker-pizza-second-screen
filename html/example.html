@@ -2,7 +2,6 @@
 <html>
 
 <head>
-	<script src="../lib/connect-streams.js"></script>
 	<!--link Google Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Comfortaa|Francois+One" rel="stylesheet">
 	<!--Stylesheet-->
@@ -34,7 +33,7 @@
 			padding: 0;
 		}
 		#textDiv {
-			border-radius:  0 20px 20px 0;
+			border-radius:  20px;
 			background-color: rgba(255, 255, 255, 0.8);
 			width: 500px;
 			height: 465px;
@@ -101,37 +100,19 @@
 
 	<div id="mainUI">
 		<div id="displayArea">
-			<div id="appContainer">
-				<div id="containerDiv" style="width: 320px; height: 467px; border: none; margin-left: -2px; margin-top: -2px;">
-					<!--Amazon CCP will go here-->
-				</div>
-			</div>
 			<div id="textDiv">
         <h1>Waiting For Order!</h1>
       </div>
 		</div>
 	</div>
 	<div id="titleArea">
-		<h2 style="color: white;" >Hacker Pizza | Order System</h2>
+		<h2 style="color: white;" >Hacker Pizza | Order Monitor</h2>
 	</div>
 	<div id="nameArea">
 		<h2 style="color: #46117f;">Product of cuHacking 2019!</h2>
 	</div>
 </body>
 
-<!-- <script src="amazon-connect-v1.2.0.js"></script> -->
-<script type="text/javascript">
-	//replace with the CCP URL for your Amazon Connect instance
-	// var ccpUrl = "your_CCP_Url";
-
-	connect.core.initCCP(containerDiv, {
-		ccpUrl: "https://ottawamenu.awsapps.com/connect/ccp#",
-		loginPopup: true,
-		softphone: {
-			allowFramedSoftphone: true
-		}
-	});
-</script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="client.js"></script>
 
