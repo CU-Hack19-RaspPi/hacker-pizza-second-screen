@@ -119,15 +119,17 @@
 <!-- <script src="amazon-connect-v1.2.0.js"></script> -->
 <script type="text/javascript">
 	//replace with the CCP URL for your Amazon Connect instance
-	var ccpUrl = "your_CCP_Url";
+	// var ccpUrl = "your_CCP_Url";
 
 	connect.core.initCCP(containerDiv, {
-		ccpUrl: "https://ingeniuscuhacking.awsapps.com/connect/ccp#",
+		ccpUrl: "https://ottawamenu.awsapps.com/connect/ccp#",
 		loginPopup: true,
 		softphone: {
 			allowFramedSoftphone: true
 		}
 	});
 </script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
 
 </html>
